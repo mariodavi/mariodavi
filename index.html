@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mário Davi - Desenvolvedor Front-End</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700|Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.ico">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+     <!--[if lt IE 8]>
+        <p class="browserupgrade">Você está utilizando um navegador <strong>desatualizado</strong>. Favor <a href="https://browsehappy.com/?locale=pt-br">atualizar seu navegador</a> para melhorar sua experiência.</p>
+    <![endif]-->
+    <!-- principal -->
+    <div id="principal">
+
+        <!-- conteudo -->
+        <main>
+            <div id="app">
+                <md-sobre>
+                    <md-info>
+                        <site-title></site-title>
+                        <md-midias></md-midias>
+                    </md-info>
+                    <md-contato></md-contato>
+                </md-sobre>
+
+            </div>
+        </main>
+        <!-- /conteudo -->
+    </div>
+    <!-- /principal -->
+
+    <template id="titulo-site">
+        <h1 class="titulo">Mário Davi <span>Desenvolvedor WEB</span></h1>
+    </template>
+
+    <template id="sobre">
+        <section class="md-sobre">
+            <md-info></md-info>
+            <md-contato></md-contato>
+        </section>
+    </template>
+
+    <template id="info">
+        <div class="md-info">
+            <site-title></site-title>
+            <md-midias></md-midias>
+        </div>
+    </template>
+
+    <template id="midias">
+        <ul class="md-midias">
+            <li><a href="https://www.linkedin.com/in/mariodavi" title="LinkedIn" target="_blank"><i
+                        class="fab fa-linkedin" aria-hidden="true"></i>
+                </a></li>
+            <li class="d-sm-none"><a
+                    href="http://api.whatsapp.com/send?1=pt_BR&amp;phone=5583988583955&text=Olá, quero solicitar um orçamento de site"
+                    title="Entre em contato pelo Whatsapp" target="_blank" rel="noopener"><i
+                        class="fab fa-whatsapp-square"></i>
+                </a></li>
+
+            <li><a href="#contato" class="btn-exibe-form" title="Entre em contato"><i class="fas fa-envelope-square"
+                        aria-hidden="true"></i></a></li>
+        </ul>
+    </template>
+
+    <template id="contato">
+        <div class="md-contato" id="contato">
+            <form action="https://formspree.io/f/mdoppeyn"
+            method="POST" id="form-contato" class="needs-validation" novalidate>
+                <input type="hidden" name="form-contato" value="1">
+                <div class="form-group">
+                    <label for="nome" class="sr-only">Nome</label>
+                    <input type="text" name="nome" class="form-control form-control-lg" id="nome" placeholder="Nome"
+                        data-error="Informe seu Nome" required>
+                    <div class="invalid-feedback">Informe Nome!</div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Email</label>
+                    <input type="email" name="email" class="form-control form-control-lg" id="email" placeholder="Email"
+                        data-error="Informe um e-mail válido" required>
+                    <div class="invalid-feedback">Informe E-mail!</div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <div class="row">
+                        <label for="telefone" class="sr-only">Telefone</label>
+                        <input type="tel" name="telefone" class="form-control form-control-lg tel" id="tel"
+                            placeholder="Telefone">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem" class="sr-only">Mensagem</label>
+                    <textarea name="mensagem" id="mensagem" class="form-control form-control-lg" cols="30" rows="4"
+                        placeholder="Mensagem" data-error="Informe sua mensagem" required></textarea>
+                    <div class="invalid-feedback">Informe Mensagem!</div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <div class="g-recaptcha" data-sitekey="6LcF1AgUAAAAADARjKn9UE6X5TIn-9F-J8v44VGq"></div>
+                    </div>
+                    <div class="form-group col-sm-6 text-right">
+                        <button type="button" class="btn btn-info btn-lg" id="fechar" title="Cancelar">X</button>
+                        <button type="submit" class="btn btn-info btn-lg" title="Entrar em contato">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-xs-12">
+            <button type="button" class="btn-exibe-form btn btn-info btn-lg">Entre em contato</button>
+        </div>
+    </template>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        Vue.component('md-sobre', {
+            template: '#sobre'
+        });
+        Vue.component('md-info', {
+            template: '#info'
+        });
+        Vue.component('site-title', {
+            template: '#titulo-site'
+        });
+        Vue.component('md-midias', {
+            template: '#midias'
+        });
+        Vue.component('md-contato', {
+            template: '#contato'
+        });
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Olá Vue!'
+            }
+        });
+    </script>
+    <script src="js/scripts.min.js"></script>
+
+</body>
+</html>
